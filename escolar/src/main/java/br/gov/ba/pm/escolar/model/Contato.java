@@ -9,9 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
-
 
 @Entity
 public class Contato implements Serializable{
@@ -22,7 +19,7 @@ public class Contato implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	@Email(message="E-mail inválido") @NotNull @NotEmpty
+	@Email(message="E-mail inválido") @NotEmpty @NotEmpty
 	private String email;
 	
 	@Column

@@ -8,10 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EscolarApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EscolarApplication.class, args);
+		SpringApplication.run(EscolarApplication.class, args);		
+		//Criptografa uma senha para adicionar na tabela usuario
+		//System.out.println("Password:" + new BCryptPasswordEncoder().encode("admin123"));
 		
-		/*Criptografa uma senha para adicionar na tabela usuario
-		System.out.println("Password:" + new BCryptPasswordEncoder().encode("123"));
-		*/
 	}
 }

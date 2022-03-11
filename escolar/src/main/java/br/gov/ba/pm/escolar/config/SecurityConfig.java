@@ -19,12 +19,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
-		http.authorizeRequests()
+		http
+			.authorizeRequests()
 			//.csrf().disable() //Habilita method Post, #issue verificar como configurar method Post			
 			.antMatchers("/webjars/**", "/css/**", "/image/**", "/js/**").permitAll()				
-			.anyRequest().authenticated()																		
-			.antMatchers(HttpMethod.GET,"/usuario/**").hasRole("ADMIN")
-			.antMatchers(HttpMethod.POST,"/usuario/insertUsuario").hasRole("ADMIN")
+			.anyRequest().authenticated()
+			//.antMatchers(HttpMethod.GET,"/usuario/**").hasRole("ADMIN")
+			//.antMatchers(HttpMethod.POST,"/usuario/insertUsuario").hasRole("ADMIN")
 			
 			.and()
 				.formLogin()
